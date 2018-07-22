@@ -1,5 +1,8 @@
 ![Cority Logo](src/assets/cority-logo.svg)
 
+## By: Minho Lee
+## email: minho.lee.93@hotmail.com
+
 # UI Engineer Coding Scenario
 
 ## Getting Started
