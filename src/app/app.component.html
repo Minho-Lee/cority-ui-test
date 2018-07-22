@@ -1,1 +1,57 @@
-<h1>{{title}}</h1>
+<div class='navbar'>
+    <span class='header'>{{header}} <span id='unread-post'>{{newPostNum}}</span> </span>
+    <span class='nav-buttons'>
+        <button class='nav-button' (click)='addNewPost()'>
+            <img width='15vw' src="../assets/plus-icon.png">
+        </button>
+        <button class='nav-button' (click)='collapsePosts()'>
+            <div *ngIf="!isCollapsed then up; else down"></div>
+            <ng-template #up>
+                <img width='15vw' src="../assets/collapse-up-arrow.png"/>
+            </ng-template>         
+            <ng-template #down>
+                <img width='15vw' src='../assets/drop-down-arrow.png' />
+            </ng-template>
+        </button>
+    </span>
+    <div class='total'>
+        Total {{totalPostNum}}
+    </div>
+</div>
+
+<div *ngIf='addingNewPost'>
+    <div class='myModal'>
+        <form #form='ngForm' (ngSubmit)="submitNewPost(form, $event)">
+            <div class='myForm form-group'>
+                <label> Title </label>
+                <br/>
+                <input type='text' name='title' ngModel #title='ngModel' required/>
+                <div *ngIf='!title.valid'>Title is required.</div>
+            </div>
+            <div class='myForm form-group'>
+                <label> Description </label>
+                <br/>
+                <input type='text' name='description' ngModel #description='ngModel' required/>
+                <div *ngIf='!description.valid'>Description is required.</div>
+            </div>
+            <div class='myForm form-group'>
+                <label> Post </label>
+                <br/>
+                <textarea rows="5" name='post' ngModel #post='ngModel' required></textarea>
+                <div *ngIf='!post.valid'>Post is required.</div>
+            </div>
+            <div class='submit-button form-group'>
+                <button id='myBtn1' type='submit'>Submit</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- My List Component -->
+<app-list (sendTotalNumber)='getTotalNumber($event)'
+          (sendNewPostNumber)='getNewPostNumber($event)'
+          [newItem]='itemToPass'
+          [isCollapsed]='isCollapsed'
+          >
+</app-list>
+
