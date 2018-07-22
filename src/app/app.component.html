@@ -1,21 +1,23 @@
-<div class='navbar'>
-    <span class='header'>{{header}} <span id='unread-post'>{{newPostNum}}</span> </span>
-    <span class='nav-buttons'>
-        <button class='nav-button' (click)='addNewPost()'>
-            <img width='15vw' src="../assets/plus-icon.png">
-        </button>
-        <button class='nav-button' (click)='collapsePosts()'>
-            <div *ngIf="!isCollapsed then up; else down"></div>
-            <ng-template #up>
-                <img width='15vw' src="../assets/collapse-up-arrow.png"/>
-            </ng-template>         
-            <ng-template #down>
-                <img width='15vw' src='../assets/drop-down-arrow.png' />
-            </ng-template>
-        </button>
-    </span>
-    <div class='total'>
-        Total {{totalPostNum}}
+<div class='full-width-navbar'>
+    <div class='navbar'>
+        <span class='header'>{{header}} <span id='unread-post'>{{newPostNum}}</span> </span>
+        <span class='nav-buttons'>
+            <button class='nav-button' (click)='addNewPost()'>
+                <img width='15vw' src="../assets/plus-icon.png">
+            </button>
+            <button class='nav-button' (click)='collapsePosts()'>
+                <div *ngIf="!isCollapsed then up; else down"></div>
+                <ng-template #up>
+                    <img width='15vw' src="../assets/collapse-up-arrow.png"/>
+                </ng-template>         
+                <ng-template #down>
+                    <img width='15vw' src='../assets/drop-down-arrow.png' />
+                </ng-template>
+            </button>
+        </span>
+        <div class='total'>
+            Total {{totalPostNum}}
+        </div>
     </div>
 </div>
 

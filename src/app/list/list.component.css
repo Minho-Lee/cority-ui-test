@@ -14,10 +14,12 @@ ul {
     margin-right: 0px;
     border-bottom: 0.5px gray solid;
 }
+.full-width-item {
+    width: 100%;
+}
 .item {
-    padding: 20px 0 20px 20px;
+    padding: 20px 0px 20px 20px;
     overflow: auto;
-    width :100%;
     line-height: 1.6;
     display: flex;
 }
@@ -62,13 +64,14 @@ ul {
     text-align: center;
 }
 .load-more {
-    height: 10vh;
-    line-height: 10vh;
+    height: 12vh;
+    line-height: 12vh;
     text-align: center;
     background: #E7E7E7;   
 }
 .load-more-text {
     color: black;
+    font-size: 1.0rem;
     display: inline-block;
     vertical-align: middle;
     line-height: normal;
@@ -81,6 +84,10 @@ button.trash-icon,
 .load-more button{
     background: none;
     border: none;
+}
+button.trash-icon:active,
+.load-more button:active {
+    outline:none;
 }
 
 /* Deal with Modal */

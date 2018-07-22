@@ -42,8 +42,8 @@ export class ListComponent implements OnInit {
   items = [
     {
       imageSrc: '../../assets/sample-icon-1.png',
-      title: 'post1',
-      description: 'this is a sample post 1',
+      title: 'Cority UI Test',
+      description: 'May the odds be ever in your favor',
       post: 'Lorem ipsum dolor sit amet, pro et erat mutat, \
       no nisl mollis dignissim eum. Facer inimicus te vis, id \
       vix nostro tamquam, qui ne iudico decore utroque. Has movet \
@@ -55,7 +55,7 @@ export class ListComponent implements OnInit {
     },
     {
       imageSrc: '',
-      title: 'post2',
+      title: 'post 2',
       description: 'this is a sample post 2',
       post: 'Short post! No need for truncation',
       date: Date.UTC(2018, 6, 30),
@@ -63,7 +63,7 @@ export class ListComponent implements OnInit {
     },
     {
       imageSrc: '../../assets/sample-icon-2.png',
-      title: 'post3',
+      title: 'post 3',
       description: 'this is a sample post 3',
       post: 'Long Post! Will need to be truncated. Might cut off halfway so beware!',
       date: Date.UTC(2018, 5, 21),

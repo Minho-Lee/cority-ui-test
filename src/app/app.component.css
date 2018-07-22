@@ -1,8 +1,12 @@
-.navbar {
-    background: #E7E7E7;
+.full-width-navbar {
     width: 100%;
-    padding: 20px;
-    padding-right: 0;
+    background: #E7E7E7;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.navbar {
+    margin-left: 20px;
+    margin-right: 20px;
 }
 .header {
     font-size: 1.5rem;
@@ -20,7 +24,6 @@
 }
 .nav-buttons{
     float: right;
-    margin-right: 5%;
 }
 .nav-button {
     background: none;
@@ -32,6 +35,9 @@
     border-radius: 50%;
     background: white;
 }
+.nav-button:focus {
+    outline: none;
+}
 .total {
     font-size: 0.8rem;
     color: rgba(0, 0, 0, 0.5);
@@ -42,41 +48,57 @@
     z-index: 10;
     width: 100%;
     height: 120%;
-    background: lightskyblue;
-    padding-left: 20px;
-    padding-top: 20px;
+    background: white;
 }
 .myForm {
     margin: 20px;
+    padding-left: 10%;
 }
 .myForm label {
     font-size: 1.2rem;
 }
 .myForm input {
     margin-top: 10px;
-    width: 85%;
+    width: 80%;
     height: 1.2rem;
-    border: none;
+    border: solid lightskyblue 1px;
     border-radius: 2px;
+    transition: border 0.5s ease-in;
 }
 .myForm textarea {
     margin-top: 10px;
-    width: 85%;
-    border: none;
+    width: 80%;
+    border: solid lightskyblue 1px;
     border-radius: 2px;
+    transition: border 0.5s ease-in;
+}
+.myForm input:focus,
+.myForm textarea:focus {
+    outline: none;
+    border: solid lightskyblue 3px;   
 }
 .submit-button {
     text-align: center;
 }
 #myBtn1 {
-    background: white;
-    border: none;
-    border-radius: 8px;
-    height: 2rem;
+    background: lightskyblue;
+    font-size: 1.2rem;
+    border: solid lightskyblue 0.1px;
+    border-radius: 10px;
+    height: 3rem;
     width: 20%;
+    color: white;
+    transition: all 0.5s ease-in-out;
+}
+#myBtn1:hover {
+    background: #C0C0C0;
+    color: black;
+    outline: none;
 }
 
 /* For desktop version */
 @media screen and (min-width: 1025px){
-       
+    .nav-buttons {
+        margin-right: 4%;
+    }
 }

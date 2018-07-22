@@ -2,36 +2,36 @@
 <div [ngClass] = "!isCollapsed ? 'show' : 'hide'">
   <ul>
     <li *ngFor="let item of items | slice:0:limit ; let i=index" class='my-list'>
-      <div class='item' [ngClass]="{'new-item': item.new}" (click)="postClick(item)"  >
-        <div class='left-chunk'>
-          <div class='post-image'>
-              <img src="{{item.imageSrc}}" 
-                    onerror="this.onerror=null;this.src='../../assets/missing-icon.png'"
-              />
-          </div>
-          <div class='post-details'>
-            <div class='post-title'>{{item.title}}</div>
-            <div class='post-description'>{{item.description}}</div>
-            <div class='post'>{{truncate(item.post)}}</div>
-            <div class='post-date'><img src='../../assets/calendar-icon.png' width='20vw'/>
-              {{item.date | date:'EEE MMM d yyyy' }}
+      <div class='full-width-item'>
+        <div class='item' [ngClass]="{'new-item': item.new}" (click)="postClick(item)"  >
+          <div class='left-chunk'>
+            <div class='post-image'>
+                <img src="{{item.imageSrc}}" 
+                      onerror="this.onerror=null;this.src='../../assets/missing-icon.png'"
+                />
+            </div>
+            <div class='post-details'>
+              <div class='post-title'>{{item.title}}</div>
+              <div class='post-description'>{{item.description}}</div>
+              <div class='post'>{{truncate(item.post)}}</div>
+              <div class='post-date'><img src='../../assets/calendar-icon.png' width='20vw'/>
+                {{item.date | date:'EEE MMM d yyyy' }}
+              </div>
             </div>
           </div>
-        </div>
-        <div class='right-chunk centered'>
-          <button (click)='deleteItem(item)' class='trash-icon'>
-          <img src="../../assets/trash-can-icon.png" 
-              width='20vw'
-          />
-        </button>
+          <div class='right-chunk centered'>
+            <button (click)='deleteItem(item)' class='trash-icon'>
+            <img src="../../assets/trash-can-icon.png" 
+                width='20vw'
+            />
+          </button>
+          </div>
         </div>
       </div>
     </li>
     <div *ngIf="items.length > limit">
       <div class='load-more'>
-          <span class='load-more-text'>
-            <button (click)='loadMorePosts()'>Load More...</button>
-          </span>
+        <button class='load-more-text' (click)='loadMorePosts()'>Load More...</button>
       </div>
     </div>
   </ul>
